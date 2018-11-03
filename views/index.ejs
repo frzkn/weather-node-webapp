@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.0/dist/paper.min.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+  <body>
+    <div class="paper border border-2 border-primary container">
+      <form action="/" method="post" >
+        <h2 id="logo"> Weather App </h2>
+
+        <img src="/images/logo.png" alt="" class="logo">
+        <input type="text" placeholder="Enter a city" name="citytext" required>
+        <button type="submit" class="btn-large">Check weather!</button>
+      </form>
+
+      <% if(weathertext != null) { %>
+        <div class="card" style="width: 20rem;">
+          <div class="card-body">
+            <h4 class="card-title text-right"> <%= weathertext.name %></h4>
+            <h5 class="text-right">City in <%= weathertext.sys.country %></h5>
+            <table>
+              <tr>
+                <td><b>Temperature</b></td>
+                <td><%= weathertext.main.temp %>° </td>
+              </tr>
+
+              <tr>
+                <td><b>Pressure</b></td>
+                <td><%= weathertext.main.pressure%></td>
+              </tr>
+
+              <tr>
+                <td><b>Humidity</b></td>
+                <td><%= weathertext.main.humidity%>%</td>
+              </tr>
+
+            </table>
+
+            <p class="card-text"> <span class="badge secondary"><%= weathertext.weather[0].main%></span> <%= weathertext.weather[0].description%> </p>
+
+            <img class="image-bottom" src="<%=iconUrl%>" align="center" alt="Card example image">
+          </div>
+          <a class="" href="www.google.com" style="text-decoration: none;"> 
+
+
+            <form action="https://www.accuweather.com/" method="get" target="https://www.accuweather.com/">
+              <button type="submit" class="btn-block" > Know more!</button>
+            </form>
+
+        </div>
+      <% } %>
+
+    </div>
+
+    <script src="/js/circletype.js"></script>
+    <script>
+      const circleType = new CircleType(document.getElementById('logo'))
+      circleType.radius(350).dir(1)
+    </script>
+  </body>
+</html>

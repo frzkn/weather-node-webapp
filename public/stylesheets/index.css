@@ -1,0 +1,62 @@
+
+.container {
+  width: 50%;
+}
+.logo {
+  border: 0;
+}
+
+#logo {
+  margin: 0;
+}
+
+.btn-large {
+  padding-top: 10px;
+}
+
+body {
+  font-family: 'Homemade Apple' !important;
+  padding: 15px;
+  background: url("/images/background.png");
+  background-size: cover;
+}
+.container {
+  margin: auto;
+}
+
+h2, img, input, button, .card{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.card {
+  margin-top: 50px; 
+}
+
+h2{
+  text-align: center;
+}
+.btn-block {
+  padding: 20px;
+}
+
+h6 {
+  margin: 2px;
+  text-align: justify;
+}
+
+.card-text {
+  text-align: center;
+  word-spacing: 1px;
+}
+
+.text-right {
+  text-align: center;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+}
