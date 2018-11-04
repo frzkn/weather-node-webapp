@@ -1,6 +1,9 @@
-
+* {
+  
+}
 .container {
   width: 50%;
+  z-index: 100;
 }
 .logo {
   border: 0;
@@ -12,6 +15,7 @@
 
 .btn-large {
   padding-top: 10px;
+  border: 1px solid black;
 }
 
 body {
@@ -19,6 +23,7 @@ body {
   padding: 15px;
   background: url("/images/background.png");
   background-size: cover;
+  z-index: 100;
 }
 .container {
   margin: auto;
@@ -33,7 +38,7 @@ h2, img, input, button, .card{
 
 .card {
   margin-top: 50px; 
-  border: black solid 2px;
+  border: black solid 1px;
 }
 
 h2{
@@ -58,3 +63,4 @@ h6 {
 a {
   text-decoration: none;
 }
+

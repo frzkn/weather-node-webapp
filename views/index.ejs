@@ -12,15 +12,14 @@
   <body>
     <div class="paper border border-2 border-primary container">
       <form action="/" method="post" >
-        <h2 id="logo"> Weather App </h2>
-
-        <img src="/images/logo.png" alt="" class="logo">
-        <input type="text" placeholder="Enter a city" name="citytext" required>
-        <button type="submit" class="btn-large">Check weather!</button>
+        <h2 id="logo" class=" animated fadeInDown"> Weather App </h2>
+        <img src="/images/logo.png" alt="" class="animated logo fadeIn fast">
+        <input type="text" placeholder="Enter a city" class="animated logo fadeIn fast" name="citytext" required>
+        <button type="submit" class="animated logo fadeIn fast btn-large">Check weather!</button>
       </form>
 
       <% if(weathertext != null) { %>
-        <div class="card border-primary border border-4" style="width: 20rem;">
+        <div  class="card border-primary border border-4" style="width: 20rem;">
           <div class="card-body">
             <h4 class="card-title text-right"> <%= weathertext.name %></h4>
             <h5 class="text-right">City in <%= weathertext.sys.country %></h5>
@@ -55,9 +54,7 @@
 
         </div>
       <% } %>
-
     </div>
-
     <script src="/js/circletype.js"></script>
     <script>
       const circleType = new CircleType(document.getElementById('logo'))
