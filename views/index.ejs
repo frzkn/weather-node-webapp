@@ -21,12 +21,12 @@
       <% if(weathertext != null) { %>
         <div  class="card border-primary border border-4" style="width: 20rem;">
           <div class="card-body">
-            <h4 class="card-title text-right"> <%= weathertext.name %></h4>
+            <h4 class="card-title text-right border-5 border-primary border" style="background: white; padding:10px;" > <%= weathertext.name %></h4>
             <h5 class="text-right">City in <%= weathertext.sys.country %></h5>
             <table>
               <tr>
                 <td><b>Temperature</b></td>
-                <td><%= weathertext.main.temp %>° F </td>
+                <td><span id="temperature"><%= weathertext.main.temp %></span></td>
               </tr>
 
               <tr>
@@ -45,12 +45,9 @@
 
             <img class="image-bottom" src="<%=iconUrl%>" align="center" alt="Card example image">
           </div>
-          <a class="" href="www.google.com" style="text-decoration: none;"> 
 
 
-            <form action="https://www.accuweather.com/" method="get" target="https://www.accuweather.com/">
-              <button type="submit" class="btn-large" > Know more!</button>
-            </form>
+            <button type="submit" class="temp-button" style="background: white; margin-bottom: 20px;" onclick="toggleTemp()"> Temperature format</button>
 
         </div>
       <% } %>
@@ -59,6 +56,22 @@
     <script>
       const circleType = new CircleType(document.getElementById('logo'))
       circleType.radius(350).dir(1)
+      var temperatureUnit = 'F' 
+      const tempElement = document.getElementById("temperature")
+      var value = document.getElementById("temperature")
+      var oldValue = value.innerHTML;
+      function toggleTemp(){
+        let value = tempElement;
+        if(temperatureUnit=='F') {
+          value.innerHTML = Math.round((parseInt(value.innerHTML)-32) * 5 / 9) + " ° C"
+          console.log(document.getElementById("temperature").innerHTML) 
+          temperatureUnit = 'C'
+        }
+
+        else {
+          value.innerHTML= oldValue + " ° F"
+          temperatureUnit = 'F'
+        } }
     </script>
   </body>
 </html>

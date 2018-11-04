@@ -16,13 +16,14 @@
 .btn-large {
   padding-top: 10px;
   border: 1px solid black;
+  background: white;
 }
 
 body {
   font-family: 'Homemade Apple' !important;
   padding: 15px;
-  background: url("/images/background.png");
-  background-size: cover;
+  background: url("/images/weather.png");
+  background-repeat: repeat;
   z-index: 100;
 }
 .container {
@@ -39,6 +40,7 @@ h2, img, input, button, .card{
 .card {
   margin-top: 50px; 
   border: black solid 1px;
+  background: url("/images/weather.png");
 }
 
 h2{
@@ -64,3 +66,6 @@ a {
   text-decoration: none;
 }
 
+.temp-button {
+  background: white;
+}

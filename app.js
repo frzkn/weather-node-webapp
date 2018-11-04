@@ -25,6 +25,7 @@ request(url,function (err,response,body) {
        return res.render('index', { weathertext: null, error: 'Error'})
     else {
     console.log(weathers)
+    weathers.main.temp = Math.round(weathers.main.temp)
     let iconUrl = 'http://openweathermap.org/img/w/'+weathers.weather[0].icon+'.png'
     return res.render('index',{ weathertext:weathers, error: null , iconUrl}) }
 }})
