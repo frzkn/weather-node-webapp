@@ -26,7 +26,33 @@ request(url,function (err,response,body) {
     else {
     console.log(weathers)
     weathers.main.temp = Math.round(weathers.main.temp)
-    let iconUrl = 'http://openweathermap.org/img/w/'+weathers.weather[0].icon+'.png'
+    const weatherId = weathers.weather[0].id
+    let iconName = ''
+     switch (true) {
+      case (weatherId < 300):
+        iconName= 'wi-thunderstorm.svg'
+        break
+      case (weatherId < 350):
+        iconName= 'wi-rain.svg'
+        break
+      case (weatherId < 550):
+        iconName= 'wi-day-showers.svg'
+        break
+      case (weatherId < 650):
+        iconName= 'wi-day-snow.svg'
+        break
+      case (weatherId < 790):
+        iconName= 'wi-windy.svg'
+        break
+      case (weatherId == 800):
+        iconName= 'wi-day-sunny.svg'
+        break
+      default:
+        iconName= 'wi-cloud.svg'
+     }
+
+    iconUrl = '/images/'+iconName
+    // let iconUrl = 'http://openweathermap.org/img/w/'+weathers.weather[0].icon+'.png'
     return res.render('index',{ weathertext:weathers, error: null , iconUrl}) }
 }})
 
