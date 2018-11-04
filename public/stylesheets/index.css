@@ -33,13 +33,11 @@ h2, img, input, button, .card{
 
 .card {
   margin-top: 50px; 
+  border: black solid 2px;
 }
 
 h2{
   text-align: center;
-}
-.btn-block {
-  padding: 20px;
 }
 
 h6 {

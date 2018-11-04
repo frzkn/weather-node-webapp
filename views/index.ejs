@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.0/dist/paper.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
   </head>
   <body>
@@ -19,14 +20,14 @@
       </form>
 
       <% if(weathertext != null) { %>
-        <div class="card" style="width: 20rem;">
+        <div class="card border-primary border border-4" style="width: 20rem;">
           <div class="card-body">
             <h4 class="card-title text-right"> <%= weathertext.name %></h4>
             <h5 class="text-right">City in <%= weathertext.sys.country %></h5>
             <table>
               <tr>
                 <td><b>Temperature</b></td>
-                <td><%= weathertext.main.temp %>° </td>
+                <td><%= weathertext.main.temp %>° F </td>
               </tr>
 
               <tr>
@@ -41,7 +42,7 @@
 
             </table>
 
-            <p class="card-text"> <span class="badge secondary"><%= weathertext.weather[0].main%></span> <%= weathertext.weather[0].description%> </p>
+            <p class="card-text"> <span class="badge secondary"><%= weathertext.weather[0].main%></span> <span class="badge"><%= weathertext.weather[0].description%> </span></p>
 
             <img class="image-bottom" src="<%=iconUrl%>" align="center" alt="Card example image">
           </div>
@@ -49,7 +50,7 @@
 
 
             <form action="https://www.accuweather.com/" method="get" target="https://www.accuweather.com/">
-              <button type="submit" class="btn-block" > Know more!</button>
+              <button type="submit" class="btn-large" > Know more!</button>
             </form>
 
         </div>
