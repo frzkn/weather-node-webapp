@@ -58,7 +58,9 @@ request(url,function (err,response,body) {
 
 })
 
-app.listen(1337, function(){
+const PORT = process.env.PORT || 1337
+
+app.listen(PORT, function(){
   console.log('server is up and running')
 })
 
